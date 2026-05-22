@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --text-muted: #cccccc;
+  --text-subtle: rgba(255, 255, 255, 0.75);
+  --accent-pink: #df7afe;
+  --accent-purple: #814ac8;
+  --glass: rgba(13, 13, 13, 0.8);
+  --card: #222222;
+  --border: rgba(255, 255, 255, 0.1);
+  --border-subtle: rgba(255, 255, 255, 0.05);
+  --gradient-primary: linear-gradient(
+    141deg,
+    rgb(223, 122, 254) 0%,
+    rgb(129, 74, 200) 100%
+  );
+  --gradient-hero: linear-gradient(
+    229deg,
+    rgb(223, 122, 254) 0%,
+    rgb(129, 74, 200) 50%,
+    transparent 100%
+  );
+  --gradient-card: linear-gradient(
+    149deg,
+    rgba(129, 74, 200, 0.4) 0%,
+    rgba(13, 13, 13, 0.8) 100%
+  );
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-text: var(--text);
+  --color-text-muted: var(--text-muted);
+  --color-accent-pink: var(--accent-pink);
+  --color-accent-purple: var(--accent-purple);
+  --color-glass: var(--glass);
+  --color-card: var(--card);
+  --color-border: var(--border);
+  --font-sans: var(--font-figtree);
+  --font-mono: var(--font-fragment-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 70%);
+}
+
+main {
+  position: relative;
+  z-index: 1;
+}
+
+::selection {
+  background: rgba(223, 122, 254, 0.35);
+  color: #fff;
+}
+
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border);
+}
+
+.glass-subtle {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+}
+
+.glow-orb {
+  background: radial-gradient(
+    circle at center,
+    rgba(223, 122, 254, 0.35) 0%,
+    rgba(129, 74, 200, 0.2) 40%,
+    transparent 70%
+  );
+  filter: blur(60px);
+}
+
+.section-padding {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media (max-width: 809px) {
+  .section-padding {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
