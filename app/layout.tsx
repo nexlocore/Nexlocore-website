@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import { Figtree, Fragment_Mono } from "next/font/google";
+import "@fontsource/figtree/400.css";
+import "@fontsource/figtree/500.css";
+import "@fontsource/figtree/600.css";
+import "@fontsource/figtree/700.css";
+
+import "@fontsource/fragment-mono/400.css";
+
 import { SmoothScroll } from "@/components/providers/SmoothScroll";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+
 import "./globals.css";
-
-const figtree = Figtree({
-  variable: "--font-figtree",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
-
-const fragmentMono = Fragment_Mono({
-  variable: "--font-fragment-mono",
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 export const metadata: Metadata = {
   title: "Nexlocore Technologies — Design. Build. Scale.",
@@ -35,8 +30,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${figtree.variable} ${fragmentMono.variable}`}>
-      <body className="min-h-screen bg-black antialiased">
+    <html lang="en">
+      <body className="min-h-screen bg-black antialiased font-sans">
         <SmoothScroll>
           <Navbar />
           <main>{children}</main>
