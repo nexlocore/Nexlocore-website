@@ -26,10 +26,10 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/contact" },
   ],
   social: [
-    { label: "Instagram", href: "https://instagram.com/" },
-    { label: "Facebook", href: "https://facebook.com/" },
-    { label: "Linkedin", href: "https://linkedin.com/" },
-    { label: "Twitter", href: "https://x.com/" },
+    { label: "Instagram", href: "https://www.instagram.com/nexlocore?utm_source=qr" },
+    // { label: "Facebook", href: "https://facebook.com/" },
+    // { label: "Linkedin", href: "https://linkedin.com/" },
+    // { label: "Twitter", href: "https://x.com/" },
   ],
 } as const;
 
